@@ -1,7 +1,7 @@
 ### Collections
 
 
-<span class="uk-badge">Collections</span> is a powerful feature that comes with Cockpit. 
+<span class="uk-badge">Collections</span> is a powerful feature that comes with Cockpit.
 With collections you can manage different types of content lists.
 
 
@@ -9,9 +9,12 @@ Define a set of fields and start collecting items. Reuse them later on your webs
 
 
 <div class="uk-alert">
-    If you're familiar with WordPress, you can compare collections to post types 
+    If you're familiar with WordPress, you can compare collections to post types
     or as a simple Content Construction Kit (CCK) you have maybe experienced in systems like Drupal.
 </div>
+
+
+![Edit collection](images/collection.edit.png)
 
 
 #### To get the items of any collection you can use the following commands:
@@ -29,14 +32,14 @@ Shortcut version:
 
   Filter via callback
 
-      <?php 
+      <?php
         $items = collection("posts")->find(function($post){
           return ($post["public"] === true && preg_match('/anyquery/i', $post["title"]));
         })->toArray();
       ?>
 
   Pagination
-    
+
       <?php $items = collection("posts")->find()->limit(10)->skip(10)->toArray(); ?>
 
   Loop through collection:

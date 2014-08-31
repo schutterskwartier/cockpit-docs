@@ -3,6 +3,9 @@
 Regions are editable content snippets that you can reuse everywhere on your website.
 
 
+![Edit region](images/region.edit.png)
+
+
 It even comes with a powerful template language called <span class="uk-badge">Lexy</span> (inspired by Blade) to be even more flexible:
 
 

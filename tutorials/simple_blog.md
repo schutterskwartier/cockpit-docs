@@ -88,7 +88,7 @@ $app->run();
 ...
 
 <?php foreach ($posts as $post): ?>
-        <h2><a href="<?php $this->route('/article/'.$post['_id']);?>"><?php=$post['title'];?></a></h2>
+    <h2><a href="<?php $this->route('/article/'.$post['_id']);?>"><?php=$post['title'];?></a></h2>
 <?php endforeach; ?>
 
 ...
@@ -112,3 +112,55 @@ $app->run();
 ```
 
 But this is just one possible way. You can use whatever you want to create/render your frontend.
+
+
+### Extras
+
+Add pagination to the blog index
+
+```php
+$app->bind("/", function() use($app) {
+
+    $limit = 5;
+    $page  = $app->param("page", 1);
+    $count = collection('blog')->count(["public"=>true]);
+    $pages = ceil($count/$limit);
+
+    // get posts
+    $posts = collection('blog')->find(["public"=>true]);
+
+    // apply pagination
+    $posts->limit($limit)->skip(($page-1) * $limit);
+
+    // apply sorting
+    $posts->sort(["created"=>1]);
+
+    return $app->render('views/index.php', ['posts'=>$posts->toArray(), 'page'=>$page, 'pages'=>$pages]);
+});
+```
+
+**views/index.php**
+
+```html
+
+...
+
+<?php foreach ($posts as $post): ?>
+    <h2><a href="<?php $this->route('/article/'.$post['_id']);?>"><?php=$post['title'];?></a></h2>
+<?php endforeach; ?>
+
+...
+
+<div class="pagination">
+    <?php for($i=1;$i<=$pages;$i++): ?>
+
+        <?php if($page==$i): ?>
+            <span><?=$i;?></span>
+        <?php else: ?>
+            <a href="<?=$this->route("/?page={$i}");?>"><?=$i;?></a>
+        <?php endif; ?>
+
+    <?php endfor; ?>
+</div>
+
+```

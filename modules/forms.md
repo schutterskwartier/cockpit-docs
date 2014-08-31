@@ -53,3 +53,25 @@ To make it work with Cockpit, create a form in the Cockpit backend called **cont
 
 
 **Done!** Happy collecting form data.
+
+---
+
+#### Custom form validation
+
+Cockpit provides a simple way to hook into form submission:
+
+Create a folder named __forms__ in the __/custom__ folder. Now let's say you want custom validation for your form called __contact__.
+Create a file named __contact.php__ in the __forms__ folder.
+
+**Example:**
+
+```
+<?php
+
+// check site_url field (form[site_url]) for a valid url pattern
+if (!filter_var($app->param('form/site_url'), FILTER_VALIDATE_URL)) {
+
+    return false;
+}
+```
+As you can see, whenever you return false you're cancelling form submission.
