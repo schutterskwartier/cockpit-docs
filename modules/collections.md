@@ -53,3 +53,68 @@ Shortcut version:
   Just one item
 
       <?php $item = collection("posts")->findOne(["title"=>"Hello world!"]); ?>
+
+
+---
+
+## Module API
+
+
+##### collection( $name )
+
+Get entries collection.
+
+```
+$collection = cockpit('collections:collection', 'collectionname');
+
+// get all entries
+$collection->find([/* conditions */])->toArray();
+
+// get one entry
+$collection->findOne([/* conditions */]);
+```
+
+---
+
+##### collections( $options = [] )
+
+Get multiple collections.
+
+```
+$collections = cockpit('collections:collections', [
+    'filter' => ['name'=>['$in'=>['blog','portfolio']]]
+]);
+
+$posts   = $collections['blog']->find()->toArray();
+$entries = $collections['portfolio']->find()->toArray();
+
+```
+
+---
+
+##### get_collection_by_slug( $slug )
+
+Get entries collection by collections slug.
+
+```
+$collection = cockpit('collections:get_collection_by_slug', 'collection-slug-name');
+```
+
+---
+
+##### group( $group, $sort = null )
+
+Get all collections in a group.
+
+```
+$collections = cockpit('collections:group', 'groupname');
+```
+
+---
+
+##### populate( $collection, $resultset )
+
+---
+
+##### populateOne( $collection, $item )
+

@@ -29,7 +29,7 @@ This is a really basic contact form with a name, email and message field.
 To make it work with Cockpit, create a form in the Cockpit backend called **contact**. Then simply replace the &lt;form&gt; tag with the form function and **wrap all fields we want to collect with form[...]**. We also added a success message div to be shown once the form has been successfully submitted:
 
 
-    <?php form("contact");?>
+    <?php cockpit("forms:form", "contact");?>
       <div class="form-message-success">
         Thank You! I'll get back to you real soon...
       </div>
@@ -56,7 +56,7 @@ To make it work with Cockpit, create a form in the Cockpit backend called **cont
 
 ---
 
-#### Custom form validation
+### Custom form validation
 
 Cockpit provides a simple way to hook into form submission:
 
@@ -75,3 +75,59 @@ if (!filter_var($app->param('form/site_url'), FILTER_VALIDATE_URL)) {
 }
 ```
 As you can see, whenever you return false you're cancelling form submission.
+
+
+
+---
+
+## Module API
+
+
+##### get_form( $name )
+
+Get form meta information array.
+
+```
+$form_meta = cockpit('forms:get_form', 'formname');
+```
+
+---
+
+##### form( $name, $options = [] )
+
+Init form in your front-end.
+
+```
+<?php cockpit('forms:form', 'formname') ?>
+
+  ...
+</form>
+```
+
+Options:
+
+```
+<?php cockpit('forms:form', 'formname', ['id' => 'myformId', 'class'=>'anycssclass']) ?>
+
+```
+
+---
+
+
+##### entries( $name )
+
+Get entries collection.
+
+```
+$entries = cockpit('forms:entries', 'formname');
+
+// get amount of entries
+$count = $entries->count();
+
+// find an entry
+$entry = $entries->findOne(['email' => 'name@anydomain.com']);
+
+// find and sort many entries
+$entry = $entries->find(['country' => 'Germany'])->sort(["created"=> -1])->toArray();
+
+```

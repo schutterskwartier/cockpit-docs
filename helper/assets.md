@@ -24,7 +24,7 @@ Shortcut version:
 
 The result are two files, each with all css and js files combined:
 
-
-    <script src="{path2cockpit}/cache/assets/my.assets.js" type="text/javascript"></script>
-    <link href="{path2cockpit}/cache/assets/my.assets.css" type="text/css" rel="stylesheet" />
-
+```
+<script src="{path/to/cockpit}/cache/assets/my.assets.js" type="text/javascript"></script>
+<link href="{path/to/cockpit}/cache/assets/my.assets.css" type="text/css" rel="stylesheet" />
+```

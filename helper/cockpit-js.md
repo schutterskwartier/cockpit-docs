@@ -1,14 +1,14 @@
 ### API - Cockpit.js
 
-Sometimes you need to access content via Javascript / Ajax. Cockpit provides a simple js api for that.
+Sometimes you need to access content via JavaScript / Ajax. Cockpit provides a simple JavaScript api for that.
 
 
 <div class="uk-alert uk-alert-warning">
-    Please generate an api token first in the cockpit settings (Settings > General > Api).
+    Please generate an api token first in the Cockpit settings (Settings > General > Api).
 </div>
 
 
-**Embed javascript api:**
+**Embed JavaScript api:**
 
 Add the following snippet to your page:
 
@@ -42,7 +42,26 @@ Now you can request regions, collections and galleries;
             // array of images
         });
 
+        // get thumbnail urls
+        Cockpit.request('/mediamanager/thumbnails', {
+            images: ['site:image1.jpg', 'image2.png'],
+            w: 50, h:50,
+            options: {
+                quality : 80,
+                mode    : 'crop'
+            }
+        }).success(function(items){
+            // array of thumbnail urls
+        });
+
+
+        // get collection items
         Cockpit.request('/collections/get/{collectionname}').success(function(items){
+            // array of collection items
+        });
+
+        // filter and sort collection items
+        Cockpit.request('/collections/get/{collectionname}', { filter: {title: {$regex: 'Word'}}, sort:{'created':-1} }).success(function(items){
             // array of collection items
         });
 
