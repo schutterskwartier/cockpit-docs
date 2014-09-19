@@ -22,7 +22,7 @@ Or define a script tag
 
     <head>
         ...
-        <script src="/cockpit/index.php/rest/api.js?token={api_token}"></script>﻿
+        <script src="/cockpit/index.php/rest/api-js?token={api_token}"></script>﻿
         ...
     </head>
 
