@@ -76,7 +76,27 @@ if (!filter_var($app->param('form/site_url'), FILTER_VALIDATE_URL)) {
 ```
 As you can see, whenever you return false you're cancelling form submission.
 
+---
 
+### Custom form data emails
+
+To customize how form data received by email looks like, first create folder named __emails__ in the __/custom/forms__ folder.
+I you'd likt to create an email template for your form called __inquiry__, create a file named __inquiry.php__ in the __emails__ folder.
+
+**Example:**
+
+```
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<body>
+    Order for product: {{$product}}, {{$quantity}} pieces.
+</body>
+</html>
+```
+
+<div class="uk-alert">
+    Use field names as variables. Write syntax in Lexy renderer or plain PHP.
+</div>
 
 ---
 
