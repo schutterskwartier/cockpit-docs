@@ -28,3 +28,15 @@ Cockpit was succesfully tested on Apache. Nginx, or whatever web server you choo
     } catch(Exception $e) {
         echo "Sorry, your server doesn't pass the Cockpit requirements.";
     }
+
+<br>
+#####List of webhosts that supports Cockpit
+* [A Small Orange](http://www.asmallorange.com/)
+* [UnoEuro](http://www.unoeuro.com/)
+* [Meebox](http://www.meebox.net/)
+* [One.com](http://www.one.com)
+* [InMotion Hosting](http://www.inmotionhosting.com/)
+* [Arvixe](http://www.arvixe.com/)
+* [SiteGround](http://www.siteground.com/)
+* [Midphase](https://www.midphase.com/)
+* [Hostway](http://www.hostway.com/)
