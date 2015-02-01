@@ -47,3 +47,17 @@ cockpit('mediamanager:thumbnail', 'path/to/anyimage.jpg', 200, [...]);
     "mode"        => "crop" // available modes: 'crop', 'best_fit', 'resize'
 ]
 ```
+
+
+##### thumbnails( $settings )
+
+Batch thumbnail urls
+
+```
+$images = cockpit('mediamanager:thumbnails', [
+    'images'  => [],
+    'width'   => 50,
+    'height'  => false,
+    'options' => []   // see above
+]);
+```

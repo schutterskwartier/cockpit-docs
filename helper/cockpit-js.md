@@ -14,7 +14,7 @@ Add the following snippet to your page:
 
     <head>
         ...
-        <?php cockpit_js_lib() ?>
+        <?php cockpit_js_lib($api_token) ?>
         ...
     </head>
 
@@ -22,7 +22,7 @@ Or define a script tag
 
     <head>
         ...
-        <script src="/cockpit/index.php/rest/api-js?token={api_token}"></script>﻿
+        <script src="/cockpit/rest/api-js?token={api_token}"></script>﻿
         ...
     </head>
 
@@ -69,8 +69,8 @@ Now you can request regions, collections and galleries;
 
 #### Direct REST calls
 
-    GET /cockpit/index.php/rest/api/regions/get/{regionname}?token={yourtoken}
+    GET /cockpit/rest/api/regions/get/{regionname}?token={yourtoken}
 
-    GET /cockpit/index.php/rest/api/galleries/get/{galleryname}?token={yourtoken}
+    GET /cockpit/rest/api/galleries/get/{galleryname}?token={yourtoken}
 
-    GET /cockpit/index.php/rest/api/collections/get/{collectionname}?token={yourtoken}
+    GET /cockpit/rest/api/collections/get/{collectionname}?token={yourtoken}

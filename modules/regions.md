@@ -99,3 +99,14 @@ Get all regions in a group
 // get meta info
 $regions = cockpit('regions:group', 'groupname');
 ```
+
+---
+
+##### update_region_field( $region, $fieldname, $value )
+
+Update a region field
+
+```
+// get meta info
+cockpit('regions:update_region_field', 'Footer', 'aboutme', 'I am a nice guy');
+```

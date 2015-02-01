@@ -3,7 +3,7 @@
 
 The great thing about Cockpit is that it works out of the box without any extra step of configuration. But you you can fine tune some settings if you need to.
 
-All you have to do is to edit <code>cockpit/config.php</code>
+All you have to do is to create a **config.php** in the custom folder: <code>cockpit/custom/config.php</code>
 
 ```
 <?php

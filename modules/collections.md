@@ -112,9 +112,20 @@ $collections = cockpit('collections:group', 'groupname');
 
 ---
 
+##### count( $name, $criteria )
+
+Count entries in a collection by criteria.
+
+```
+// count entries made by john@domain.tld
+$count = cockpit('collections:count', 'posts', ['author'=>'john']);
+
+```
+
+---
+
 ##### populate( $collection, $resultset )
 
 ---
 
 ##### populateOne( $collection, $item )
-

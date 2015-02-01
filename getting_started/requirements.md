@@ -29,8 +29,9 @@ Cockpit was succesfully tested on Apache. Nginx, or whatever web server you choo
         echo "Sorry, your server doesn't pass the Cockpit requirements.";
     }
 
-<br>
-#####List of webhosts that supports Cockpit
+
+##### List of webhosts that are known to support Cockpit
+
 * [A Small Orange](http://www.asmallorange.com/)
 * [UnoEuro](http://www.unoeuro.com/)
 * [Meebox](http://www.meebox.net/)
@@ -46,3 +47,5 @@ Cockpit was succesfully tested on Apache. Nginx, or whatever web server you choo
 * [WebhostingBuzz](http://www.webhostingbuzz.com/)
 * [Site5](http://www.site5.com/)
 * [A2 Hosting](http://www.a2hosting.com/)
+
+Please contact us if you're missing your company's name here.

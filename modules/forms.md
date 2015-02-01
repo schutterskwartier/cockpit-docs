@@ -78,10 +78,10 @@ As you can see, whenever you return false you're cancelling form submission.
 
 ---
 
-### Custom form data emails
+### Custom email templates
 
-To customize how form data received by email looks like, first create folder named __emails__ in the __/custom/forms__ folder.
-I you'd likt to create an email template for your form called __inquiry__, create a file named __inquiry.php__ in the __emails__ folder.
+To customize the email layout send by the form module, first create folder named __emails__ in the __/custom/forms__ folder.
+Now let's say you want to create an email template for your form called __inquiry__ with the fields ```form[product]``` and ```form[quantity]```. Create a file named __inquiry.php__ in the __emails__ folder: ```/custom/forms/emails/inquiry.php```.
 
 **Example:**
 
@@ -95,7 +95,7 @@ I you'd likt to create an email template for your form called __inquiry__, creat
 ```
 
 <div class="uk-alert">
-    Use field names as variables. Write syntax in Lexy renderer or plain PHP.
+    Use field names as variables. Use the Lexy syntax or plain PHP.
 </div>
 
 ---
