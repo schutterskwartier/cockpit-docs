@@ -112,6 +112,58 @@ $collections = cockpit('collections:group', 'groupname');
 
 ---
 
+##### find( $name, $options = [] )
+
+Query table and get resultset.
+
+```
+$comments = cockpit('collections:find', 'comments', [
+    'filter' => ['author' => ['$in'=>['john','henry']]],
+    'sort'   => ['created' => -1]
+]);
+
+```
+
+---
+
+##### findOne( $name, $criteria = [] )
+
+Query collection and get one item.
+
+```
+$comment = cockpit('collections:findOne', 'posts', ['title'=>'Hello world.']);
+
+```
+
+---
+
+##### remove( $name, $criteria )
+
+Remove an entry in a collection by criteria.
+
+```
+// remove all fields made by john@domain.tld
+cockpit('collections:remove', 'posts', ['title'=>'Hello world.']);
+
+```
+
+---
+
+##### save_entry( $name, $data )
+
+Add entry to collection. If ```$data['_id']``` exists, then the existing entry will be updated.
+
+```
+
+$entry = ['title' => 'Hello world.', 'content' => '...'];
+
+// remove all fields made by john@domain.tld
+cockpit('collections:save_entry', 'posts', $entry);
+
+```
+
+---
+
 ##### count( $name, $criteria )
 
 Count entries in a collection by criteria.

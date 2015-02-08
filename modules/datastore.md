@@ -44,14 +44,12 @@ $comments = cockpit('datastore:find', 'comments', [
 
 ---
 
-##### findOne( $table, $options = [] )
+##### findOne( $table, $criteria = [] )
 
 Query table and get one item.
 
 ```
-$comment = cockpit('datastore:findOne', 'comments', [
-    'filter' => ['email' => 'test@domain.tld']
-]);
+$comment = cockpit('datastore:findOne', 'comments', ['email' => 'test@domain.tld']);
 
 ```
 
