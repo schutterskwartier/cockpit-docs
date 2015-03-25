@@ -157,7 +157,7 @@ Add entry to collection. If ```$data['_id']``` exists, then the existing entry w
 
 $entry = ['title' => 'Hello world.', 'content' => '...'];
 
-// remove all fields made by john@domain.tld
+// create a new entry
 cockpit('collections:save_entry', 'posts', $entry);
 
 ```
