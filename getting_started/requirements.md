@@ -47,5 +47,6 @@ Cockpit was succesfully tested on Apache. Nginx, or whatever web server you choo
 * [WebhostingBuzz](http://www.webhostingbuzz.com/)
 * [Site5](http://www.site5.com/)
 * [A2 Hosting](http://www.a2hosting.com/)
+* [Hosting4Real](http://hosting4real.net/)
 
 Please contact us if you're missing your company's name here.
