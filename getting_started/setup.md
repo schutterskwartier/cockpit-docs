@@ -5,7 +5,8 @@ To install Cockpit, just follow these steps:
 
 1. Upload the "cockpit" folder to the root of your domain or project folder.
 2. Go to http://url/to/cockpit/install and follow the instructions.
-3. That's it, you are ready to go.
+3. Delete the /install directory
+4. That's it, you are ready to go.
 
 ---
 
